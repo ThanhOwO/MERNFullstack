@@ -17,8 +17,9 @@ function App() {
       <Route exact path='/register' element={<Auth authRoute='register'/>} />
       <Route path='*' element={<NotFound/>}/>
       <Route element={<ProtectedRoute/>}>
-      <Route path='/dashboard' element={<Dashboard/>} />
+        <Route path='/dashboard' element={<Dashboard/>} />
       </Route>
+      
     </Routes>
   </Router> 
 
