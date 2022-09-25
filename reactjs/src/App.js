@@ -7,6 +7,8 @@ import AuthContextProvider from './contexts/AuthContext'
 import Dashboard from './views/Dashboard'
 import ProtectedRoute from './components/routing/ProtectedRoute'
 
+
+
 function App() {
   return (
   <AuthContextProvider>
@@ -16,13 +18,14 @@ function App() {
       <Route exact path='/login' element={<Auth authRoute='login'/>} />
       <Route exact path='/register' element={<Auth authRoute='register'/>} />
       <Route path='*' element={<NotFound/>}/>
+      
+      
       <Route element={<ProtectedRoute/>}>
         <Route path='/dashboard' element={<Dashboard/>} />
       </Route>
       
     </Routes>
   </Router> 
-
   </AuthContextProvider>
   )
 }
