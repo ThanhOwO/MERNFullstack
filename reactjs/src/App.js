@@ -6,8 +6,7 @@ import NotFound from './components/auth/NotFound'
 import AuthContextProvider from './contexts/AuthContext'
 import Dashboard from './views/Dashboard'
 import ProtectedRoute from './components/routing/ProtectedRoute'
-
-
+import Post from './views/Posts'
 
 function App() {
   return (
@@ -19,9 +18,9 @@ function App() {
       <Route exact path='/register' element={<Auth authRoute='register'/>} />
       <Route path='*' element={<NotFound/>}/>
       
-      
       <Route element={<ProtectedRoute/>}>
-        <Route path='/dashboard' element={<Dashboard/>} />
+          <Route path='/dashboard' element={<Dashboard/>} />
+          <Route path='/posts' element={<Post/>} />
       </Route>
       
     </Routes>

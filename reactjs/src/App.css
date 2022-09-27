@@ -110,3 +110,11 @@ button.post-button.btn:active {
 .post-title {
 	margin-bottom: 0.5rem;
 }
+
+.Logout {
+	margin-left: 900px;
+}
+
+.header {
+	background-color: rgb(28, 25, 31);
+}

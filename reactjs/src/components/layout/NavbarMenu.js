@@ -4,30 +4,42 @@ import GSCornerLogo from '../../assets/GSCornerlogo.png'
 import logoutIcon from '../../assets/logout.svg'
 import Button from 'react-bootstrap/Button'
 import {Link} from 'react-router-dom'
+import '../../App.css'
+import { useContext } from 'react'
+import { AuthContext } from '../../contexts/AuthContext'
+
+
+
 
 const NavbarMenu = () => {
+
+    const {authState: {user: {username}}, logoutUser} = useContext(AuthContext)
+    const logout = () => logoutUser()
+
+
   return (
-    <Navbar expand='lg' bg='primary' variant='dark' className='shadow'>
+    <Navbar expand='lg' variant='dark' sticky='top' className='header'>
         <Navbar.Brand className='font-weight-bolder text-white'>
-            <img src={GSCornerLogo} alt="learnItLogo" width='32' height='32' className='mr-2'/>
-            GSCorner
+            <img src={GSCornerLogo} alt="learnItLogo" width='120' height='35' className='mr-2'/>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='mr-auto'>
                 <Nav.Link className='font-weight-bolder text-white' to='/dashboard' as={Link}>
-                    Dashboard
+                    Home
                 </Nav.Link>
-                <Nav.Link className='font-weight-bolder text-white' to='/about' as={Link}>
-                    About
+                <Nav.Link className='font-weight-bolder text-white' to='/posts' as={Link}>
+                    Posts
+                </Nav.Link>
+                <Nav.Link className='font-weight-bolder text-white' to='/games' as={Link}>
+                    Games
                 </Nav.Link>
             </Nav>
-
-            <Nav>
+            <Nav className='ms-auto'>
                 <Nav.Link className='font-weight-bolder text-white' disabled>
-                    Welcome Tung
+                    Welcome {username}
                 </Nav.Link>
-                <Button variant='secondary' className='font-weight-bolder text-white'>
+                <Button variant='secondary' className='font-weight-bolder text-white' onClick={logout}>
                     <img src={logoutIcon} alt="logoutIcon" width='32' height='32' className='mr-2'/>
                     Logout
                 </Button>
