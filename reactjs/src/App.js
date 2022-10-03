@@ -7,24 +7,26 @@ import AuthContextProvider from './contexts/AuthContext'
 import Dashboard from './views/Dashboard'
 import ProtectedRoute from './components/routing/ProtectedRoute'
 import Post from './views/Posts'
+import Games from './views/GamesCard/Games';
 
 function App() {
   return (
   <AuthContextProvider>
-  <Router>
-    <Routes>
-      <Route exact path='/' element={<Landing/>} />
-      <Route exact path='/login' element={<Auth authRoute='login'/>} />
-      <Route exact path='/register' element={<Auth authRoute='register'/>} />
-      <Route path='*' element={<NotFound/>}/>
-      
-      <Route element={<ProtectedRoute/>}>
-          <Route path='/dashboard' element={<Dashboard/>} />
-          <Route path='/posts' element={<Post/>} />
-      </Route>
-      
-    </Routes>
-  </Router> 
+      <Router>
+        <Routes>
+          <Route exact path='/' element={<Landing/>} />
+          <Route exact path='/login' element={<Auth authRoute='login'/>} />
+          <Route exact path='/register' element={<Auth authRoute='register'/>} />
+          <Route path='*' element={<NotFound/>}/>
+          
+          <Route element={<ProtectedRoute/>}>
+              <Route path='/dashboard' element={<Dashboard/>} />
+              <Route path='/games' element={<Games/>} />
+              <Route path='/posts' element={<Post/>} />
+          </Route>
+          
+        </Routes>
+      </Router> 
   </AuthContextProvider>
   )
 }

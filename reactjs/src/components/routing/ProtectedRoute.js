@@ -3,6 +3,7 @@ import { useContext } from 'react'
 import { AuthContext } from '../../contexts/AuthContext'
 import Spinner from 'react-bootstrap/esm/Spinner'
 import NavbarMenu from '../layout/NavbarMenu'
+import Footer from '../layout/Footer'
 
 
 const ProtectedRoute = () => {
@@ -21,6 +22,7 @@ const ProtectedRoute = () => {
         isAuthenticated ? (<>
           <NavbarMenu/>            
           <Outlet/>
+          <Footer/>
         </>) : (<Navigate to='/login'/>)
   )
   

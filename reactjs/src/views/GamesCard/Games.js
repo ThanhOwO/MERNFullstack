@@ -1,15 +1,15 @@
 import React from 'react'
-import "../App.css"
+import "../../App.css"
 import {Container} from 'react-bootstrap'
-import Cards from './HomeCard/Cards'
 
-const Dashboard = () => {
+
+const Games = () => {
   return (
     <div className="landing">
             <div className="dark-overlay">
                 <Container className='BodyContainer'>
-                  <h2>Daily New</h2>
-                  <Cards/>
+                  <h2>Top 10 game release on October</h2>
+                  
                 </Container>
             </div>
         </div> 
@@ -17,4 +17,4 @@ const Dashboard = () => {
 }
 
 
-export default Dashboard
+export default Games

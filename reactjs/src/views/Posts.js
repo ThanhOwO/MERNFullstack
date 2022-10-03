@@ -1,17 +1,20 @@
 import React from 'react'
+import "../App.css"
+import {Container} from 'react-bootstrap'
 
-const Posts = () => {
+
+const Post = () => {
   return (
     <div className="landing">
             <div className="dark-overlay">
-                <div className="landing-inner">
-                <h1>My post</h1>
-                   
-                </div>
+                <Container className='BodyContainer'>
+                  <h2>Post</h2>
+                  
+                </Container>
             </div>
         </div> 
   )
 }
 
 
-export default Posts
+export default Post

@@ -7,6 +7,7 @@ import {Link} from 'react-router-dom'
 import '../../App.css'
 import { useContext } from 'react'
 import { AuthContext } from '../../contexts/AuthContext'
+import { Container } from 'react-bootstrap'
 
 
 
@@ -19,12 +20,13 @@ const NavbarMenu = () => {
 
   return (
     <Navbar expand='lg' variant='dark' sticky='top' className='header'>
+        <Container>
         <Navbar.Brand className='font-weight-bolder text-white'>
             <img src={GSCornerLogo} alt="learnItLogo" width='120' height='35' className='mr-2'/>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
-            <Nav className='mr-auto'>
+            <Nav className='mr-auto' >
                 <Nav.Link className='font-weight-bolder text-white' to='/dashboard' as={Link}>
                     Home
                 </Nav.Link>
@@ -36,7 +38,7 @@ const NavbarMenu = () => {
                 </Nav.Link>
             </Nav>
             <Nav className='ms-auto'>
-                <Nav.Link className='font-weight-bolder text-white' disabled>
+                <Nav.Link className='User text-white' disabled>
                     Welcome {username}
                 </Nav.Link>
                 <Button variant='secondary' className='font-weight-bolder text-white' onClick={logout}>
@@ -45,6 +47,7 @@ const NavbarMenu = () => {
                 </Button>
             </Nav>
         </Navbar.Collapse>
+        </Container>
     </Navbar>
   )
 }
