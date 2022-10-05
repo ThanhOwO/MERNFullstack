@@ -1,0 +1,12 @@
+.embed-responsive-item{
+    width: 700px;
+    height: 400px;
+    margin-top: 2rem;
+    margin-left: 14rem;
+    border-radius: 20px;
+    border: solid 4px;
+}
+
+.VideoDescription .a{
+    text-decoration: none;
+}
