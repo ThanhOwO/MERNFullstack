@@ -30,6 +30,8 @@ app.use(cors())
 app.use('/api/auth', authRouter)
 app.use('/api/posts', postRouter)
 
+const PORT = process.env.PORT || 5000
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
