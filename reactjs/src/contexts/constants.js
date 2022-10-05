@@ -1,4 +1,4 @@
-export const apiUrl = process.env.NODE_ENV !== 'production' ? 'http://thanhfs.herokuapp.com/api' : 'somedeployedURL'
+export const apiUrl = process.env.NODE_ENV !== 'production' ? 'http://thanhlefs.herokuapp.com/api' : 'somedeployedURL'
 export const LOCAL_STORAGE_TOKEN_NAME = 'GSCorner-mern'
 
 
