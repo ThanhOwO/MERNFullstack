@@ -30,6 +30,10 @@ app.use(cors())
 app.use('/api/auth', authRouter)
 app.use('/api/posts', postRouter)
 
+app.get('/', (req, res) => {
+  res.send('APP IS RUNNING')
+})
+
 const PORT = process.env.PORT || 5000
 
 app.listen(port, () => {
